@@ -1,10 +1,8 @@
 import json
-from pathlib import Path
+from src import utils
 
-
-PROJECT_ROOT = Path(__file__).parent.parent
-NETWORK_PATH = PROJECT_ROOT / "data" / "network.json"
-OUT_PATH = PROJECT_ROOT / "tools" / "connections_md.txt"
+NETWORK_PATH = utils.PROJECT_ROOT / "data" / "network.json"
+OUT_PATH = utils.PROJECT_ROOT / "tools" / "connections_md.txt"
 
 network: dict[str, dict[str, list[str]]]
 with open(NETWORK_PATH, "r") as file:

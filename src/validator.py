@@ -1,9 +1,9 @@
 import enum
 import json
-import pathlib
+from . import utils
 
 
-FILEPATH = pathlib.Path(__file__).parent.parent.joinpath("data/network.json")
+FILEPATH = utils.PROJECT_ROOT / "data" / "network.json"
 
 
 RouteType = enum.Enum("RouteType", "INVALID COMMAND CONNECTION")

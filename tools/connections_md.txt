@@ -1,0 +1,52 @@
+* M3 &ndash; connects to M25, M27.
+* M8 &ndash; connects to M9, M73, M74, M77, M80, M898, A8M.
+* M9 &ndash; connects to M8, M80, M90, M876.
+* M11 &ndash; connects to M25.
+* M18 &ndash; connects to M1, M62, M180, A1M.
+* M23 &ndash; connects to M25.
+* M26 &ndash; connects to M20, M25.
+* M27 &ndash; connects to M3.
+* M32 &ndash; connects to M4.
+* M45 &ndash; connects to M1.
+* M50 &ndash; connects to M5.
+* M53 &ndash; connects to M56.
+* M54 &ndash; connects to M6.
+* M55 &ndash; connects to M6.
+* M56 &ndash; connects to M6, M53, M60.
+* M57 &ndash; connects to M58, M62.
+* M58 &ndash; connects to M6, M57.
+* M61 &ndash; connects to M6, M60, M65, A666M.
+* M65 &ndash; connects to M6, M61.
+* M66 &ndash; connects to M60, M62.
+* M67 &ndash; connects to M60.
+* M69 &ndash; connects to M1, M6.
+* M73 &ndash; connects to M8, M74, M80, A8M.
+* M74 &ndash; connects to M8, M73, M77, A74M.
+* M77 &ndash; connects to M8.
+* M80 &ndash; connects to M8, M9, M73, M876.
+* M90 &ndash; connects to M9, A823M.
+* M180 &ndash; connects to M18, M181.
+* M181 &ndash; connects to M180, A1077M.
+* M271 &ndash; connects to M27.
+* M275 &ndash; connects to M27.
+* M602 &ndash; connects to M60, M62.
+* M606 &ndash; connects to M62.
+* M621 &ndash; connects to M1, M62.
+* M876 &ndash; connects to M9, M80.
+* M898 &ndash; connects to M8.
+* A1M &ndash; connects to M1, M18, M25, M62, A66M, A194M, A195M.
+* A8M &ndash; connects to M8, M73.
+* A38M &ndash; connects to M6.
+* A48M &ndash; connects to M4.
+* A66M &ndash; connects to A1M.
+* A74M &ndash; connects to M6, M74.
+* A194M &ndash; connects to A1M.
+* A195M &ndash; connects to A1M.
+* A308M &ndash; connects to M4, A404M.
+* A329M &ndash; connects to M4.
+* A404M &ndash; connects to M4, A308M.
+* A601M &ndash; connects to M6.
+* A627M &ndash; connects to M62.
+* A666M &ndash; connects to M61.
+* A823M &ndash; connects to M90.
+* A1077 &ndash; connects to M181.

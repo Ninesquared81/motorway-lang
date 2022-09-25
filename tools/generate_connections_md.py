@@ -2,7 +2,7 @@ import json
 from src import utils
 
 NETWORK_PATH = utils.PROJECT_ROOT / "data" / "network.json"
-OUT_PATH = utils.PROJECT_ROOT / "tools" / "connections_md.txt"
+OUT_PATH = utils.PROJECT_ROOT / "tools" / "out" / "connections_md.txt"
 
 network: dict[str, dict[str, list[str]]]
 with open(NETWORK_PATH, "r") as file:

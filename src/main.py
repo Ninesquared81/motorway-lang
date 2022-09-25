@@ -1,20 +1,9 @@
-import argparse
 import sys
 
 from src.lexer import lex
 from src.parser import parse
 from src.interpreter import Interpreter
 from src import exceptions
-
-
-def main():
-    arg_parser = argparse.ArgumentParser()
-    arg_parser.add_argument("file", nargs="?")
-    args = arg_parser.parse_args()
-    filename = args.file
-
-    session = InterpreterSession(filename)
-    session.start()
 
 
 class InterpreterSession:
@@ -53,7 +42,3 @@ class InterpreterSession:
         except exceptions.MotorwayBaseError as error:
             token = error.token
             print(f"Error at {token.value} {token.location}", file=sys.stderr)
-
-
-if __name__ == "__main__":
-    main()

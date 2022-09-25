@@ -27,7 +27,7 @@ which are mainly interpreted as ASCII characters.
 * M42 &ndash; swap top two elements of stack.
 * M48 &ndash; add top of stack to next element.
 * M49 &ndash; subtract top of stack from next element.
-* M60 &ndash; rotate top three elements of stack like so: `... c b a` -> `... b a c`.
+* M60 &ndash; rotate top three elements of stack like so: `... c b a` -> `... b a c` (ellipsis represents rest of stack).
 * M62 &ndash; jump back to matching `M25` token (i.e. loop end).
 
 ### Other Motorways

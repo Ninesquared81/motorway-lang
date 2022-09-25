@@ -27,6 +27,8 @@ class InterpreterSession:
             line = input(prompt)
             if line.lower() == "quit":
                 return
+            elif line.startswith(":Debug"):
+                debug(line.removeprefix(":Debug").lstrip(), self.interpreter)
             self.run(line)
 
     def run_file(self, filename: str):
@@ -36,9 +38,49 @@ class InterpreterSession:
 
     def run(self, source: str):
         tokens = lex(source)
-        route = parse(tokens)
         try:
+            route = parse(tokens)
             self.interpreter.interpret(route)
         except exceptions.MotorwayBaseError as error:
             token = error.token
-            print(f"Error at {token.value} {token.location}", file=sys.stderr)
+            print(f"Error at {token.value} {token.location}: {error.message}", file=sys.stderr)
+
+
+def debug(line: str, interpreter: Interpreter):
+    command = Debug.get_commands()
+    for subcommand in line.split():
+        try:
+            command = command[subcommand]
+        except KeyError:
+            print("Unrecognised debug command:", line, file=sys.stderr)
+        if not isinstance(command, dict):
+            break
+    else:
+        return
+    # noinspection PyCallingNonCallable
+    command(interpreter)
+
+
+class Debug:
+    @classmethod
+    def get_commands(cls):
+        return {
+            "stack": {
+                "print": cls.print_stack,
+                "clear": cls.clear_stack,
+                "dump": cls.dump_stack,
+            }
+        }
+
+    @staticmethod
+    def print_stack(interpreter: Interpreter):
+        interpreter.print_stack()
+
+    @staticmethod
+    def clear_stack(interpreter: Interpreter):
+        interpreter.clear_stack()
+
+    @staticmethod
+    def dump_stack(interpreter: Interpreter):
+        interpreter.print_stack()
+        interpreter.clear_stack()

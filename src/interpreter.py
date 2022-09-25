@@ -77,6 +77,9 @@ class Interpreter(motorways.MotorwayVisitor):
         self._stack.append(a)
         self._stack.append(c)
 
-    @property
-    def stack(self):
-        return self._stack
+    def print_stack(self):
+        print(self._stack)
+
+    def clear_stack(self):
+        while self._stack:
+            self._stack.pop()

@@ -5,11 +5,11 @@ from .exceptions import EmptyStackError
 
 
 def check_stack(func):
-    def wrapper(*args, **kwargs):
+    def wrapper(interpreter, motorway, *args, **kwargs):
         try:
-            func(*args, **kwargs)
+            func(interpreter, motorway, *args, **kwargs)
         except IndexError:
-            raise EmptyStackError
+            raise EmptyStackError(motorway.token, "Tried to operate on empty stack.")
     return wrapper
 
 
@@ -18,7 +18,8 @@ class Interpreter(motorways.MotorwayVisitor):
         self._stack: list[MutableUInt8] = []
 
     def interpret(self, route: list[motorways.Motorway]):
-        pass
+        for motorway in route:
+            motorway.accept(self)
 
     @check_stack
     def visit_m1(self, motorway: motorways.M1):
@@ -75,3 +76,7 @@ class Interpreter(motorways.MotorwayVisitor):
         self._stack.append(b)
         self._stack.append(a)
         self._stack.append(c)
+
+    @property
+    def stack(self):
+        return self._stack

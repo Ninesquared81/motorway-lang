@@ -1,4 +1,4 @@
-from fixedint import MutableUInt8
+from fixedint import UInt8
 
 from . import motorways
 from .exceptions import EmptyStackError
@@ -15,7 +15,7 @@ def check_stack(func):
 
 class Interpreter(motorways.MotorwayVisitor):
     def __init__(self):
-        self._stack: list[MutableUInt8] = []
+        self._stack: list[UInt8] = []
 
     def interpret(self, route: list[motorways.Motorway]):
         for motorway in route:
@@ -35,17 +35,17 @@ class Interpreter(motorways.MotorwayVisitor):
         self._stack.pop()
 
     def visit_m6(self, motorway: motorways.M6):
-        self._stack.append(MutableUInt8(0))
+        self._stack.append(UInt8(0))
 
     def visit_m20(self, motorway: motorways.M20):
         chars = input()
         for char in chars:
-            self._stack.append(MutableUInt8(ord(char)))
+            self._stack.append(UInt8(ord(char)))
 
     @check_stack
     def visit_m25(self, motorway: motorways.M25):
         while self._stack.pop():
-            pass
+            self.interpret(motorway.body)
 
     @check_stack
     def visit_m40(self, motorway: motorways.M40):

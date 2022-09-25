@@ -84,3 +84,26 @@ which are mainly interpreted as ASCII characters.
 * A823M &ndash; connects to M90.
 * A1077 &ndash; connects to M181.
 
+## The Interpreter
+This repository contains a Python implementation of the language. This relies on the third-party package
+[fixedint](https://pypi.org/project/fixedint/) which must be installed before using the interpreter (e.g. using `pip`).
+Of course, Python (3.9+) must also be installed on the system to use the interpreter.
+
+With _fixedint_ installed, you can run the interpreter by running the script `motorway.py`:
+
+    python motorway.py [file]
+
+The argument `file`, if provided, determines the source code file to be interpreted. Alternatively, you can omit it to
+enter an interactive REPL session. The recommended filename extension for Motorway files is `*.mway`, although any
+extension may be used. The extension must be included when invoking the interpreter.
+
+## Project Structure
+Source code is (mainly) found in the `src` directory. A single script `motorway.py` is provided in the project root to
+make it easier to use as a command line tool.
+
+The network used to validate routes can be found in `data/network.json`.
+
+The `tools` directory contains scripts used to automatically generate various parts of the project. These should not
+need to be invoked in normal running of the interpreter (although running them shouldn't break anything either).
+
+The contents of these subdirectories are described in more detail in their individual READMEs.

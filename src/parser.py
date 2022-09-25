@@ -11,7 +11,7 @@ def parse(tokens: list[Token]) -> list[motorways.Motorway]:
     commands: list[Token] = []
     route_types = [add_token_if_valid(token, commands) for token in tokens]
 
-    for current_token, current_type, next_token in zip(tokens, route_types, tokens[:-1]):
+    for current_token, current_type, next_token in zip(tokens, route_types, tokens[1:]):
         if not validate_route(current_token.value, current_type, next_token.value):
             raise ParseError(current_token, f"Cannot find route from {current_token.value} to {next_token.value}.")
 

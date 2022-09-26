@@ -5,7 +5,7 @@ throw away length: (M25) (M4) M5
 duplicate input: (M42) M40
 
 subtract 48 (to convert to a number):
-    (M42) M6 M1 M45 M1 M45 M1 M45 M1 (M25) M40 (M25) (M4) M48 (M4) (M25) M40
+    (M42) M6 M1 M45 M1 A1M M1 M621 M1 (M25) M40 (M25) (M4) M48 (M4) (M25) M40
     (M25) (M4) M48 (M4) (M25) M40 (M42) M40 (M25) (M4) M48 (M4) M48 (M4) M49
 
 loop forever if nonzero: (M5) (M42) M40 M25 (M40) M42 M40 (M25) M4 (M5) M42 M40 (M25) M26

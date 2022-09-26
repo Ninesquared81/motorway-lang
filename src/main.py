@@ -53,6 +53,7 @@ def debug(line: str, interpreter: Interpreter):
             command = command[subcommand]
         except KeyError:
             print("Unrecognised debug command:", line, file=sys.stderr)
+            return
         if not isinstance(command, dict):
             break
     else:

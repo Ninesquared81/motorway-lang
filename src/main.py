@@ -25,9 +25,9 @@ class InterpreterSession:
         prompt = "[.\u0336/\u0336|\u0336\\\u0336.\u0336]: "
         while True:
             line = input(prompt)
-            if line.lower() == "quit":
+            if not line or line == chr(4) or line.lower() == "quit":
                 return
-            elif line.startswith(":Debug"):
+            if line.startswith(":Debug"):
                 debug(line.removeprefix(":Debug").lstrip(), self.interpreter)
             self.run(line)
 

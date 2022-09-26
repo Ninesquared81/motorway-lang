@@ -21,14 +21,14 @@ which are mainly interpreted as ASCII characters.
 * M4 &ndash; pop current character and print it to _stdout_.
 * M5 &ndash; pop stack and discard the value.
 * M6 &ndash; push new cell to stack, initialized to zero.
-* M20 &ndash; read a string from _stdin_ and store on stack element-wise (i.e. the final character of the string will be at the top of the stack)
+* M20 &ndash; read a string from _stdin_ and store on stack element-wise (i.e. the final character of the string will be at the top of the stack) along with its length.
 * M25 &ndash; if top of stack is zero, skip past matching `M62` token, else, continue to next motorway (i.e. loop start).
+* M26 &ndash; jump back to matching `M25` token (i.e. loop end).
 * M40 &ndash; duplicate top of stack.
 * M42 &ndash; swap top two elements of stack.
 * M48 &ndash; add top of stack to next element.
 * M49 &ndash; subtract top of stack from next element.
 * M60 &ndash; rotate top three elements of stack like so: `... c b a` -> `... b a c` (ellipsis represents rest of stack).
-* M62 &ndash; jump back to matching `M25` token (i.e. loop end).
 
 ### Other Motorways
 * M3 &ndash; connects to M25, M27.
@@ -37,7 +37,6 @@ which are mainly interpreted as ASCII characters.
 * M11 &ndash; connects to M25.
 * M18 &ndash; connects to M1, M62, M180, A1M.
 * M23 &ndash; connects to M25.
-* M26 &ndash; connects to M20, M25.
 * M27 &ndash; connects to M3.
 * M32 &ndash; connects to M4.
 * M45 &ndash; connects to M1.
@@ -49,6 +48,7 @@ which are mainly interpreted as ASCII characters.
 * M57 &ndash; connects to M58, M62.
 * M58 &ndash; connects to M6, M57.
 * M61 &ndash; connects to M6, M60, M65, A666M.
+* M62 &ndash; connects to M1, M6, M18, M57, M60, M621, M602, M606, A1M, A627M.
 * M65 &ndash; connects to M6, M61.
 * M66 &ndash; connects to M60, M62.
 * M67 &ndash; connects to M60.

@@ -4,7 +4,6 @@
 * M11 &ndash; connects to M25.
 * M18 &ndash; connects to M1, M62, M180, A1M.
 * M23 &ndash; connects to M25.
-* M26 &ndash; connects to M20, M25.
 * M27 &ndash; connects to M3.
 * M32 &ndash; connects to M4.
 * M45 &ndash; connects to M1.
@@ -16,6 +15,7 @@
 * M57 &ndash; connects to M58, M62.
 * M58 &ndash; connects to M6, M57.
 * M61 &ndash; connects to M6, M60, M65, A666M.
+* M62 &ndash; connects to M1, M6, M18, M57, M60, M621, M602, M606, A1M, A627M.
 * M65 &ndash; connects to M6, M61.
 * M66 &ndash; connects to M60, M62.
 * M67 &ndash; connects to M60.

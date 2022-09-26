@@ -70,9 +70,10 @@ def parse_command(i: int, length: int, commands: list[Token]) -> tuple[int, moto
 def parse_loop(i: int, length: int, commands: list[Token]) -> tuple[int, motorways.M25]:
     token = commands[i]
     body: list[motorways.Motorway] = []
+    i += 1
     while i < length:
         command = commands[i]
-        if command == "M62":
+        if command.value == "M26":
             break
         i, motorway = parse_command(i, length, commands)
         body.append(motorway)

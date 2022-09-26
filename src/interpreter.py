@@ -1,3 +1,5 @@
+import sys
+
 from fixedint import UInt8
 
 from . import motorways
@@ -38,10 +40,10 @@ class Interpreter(motorways.MotorwayVisitor):
         self._stack.append(UInt8(0))
 
     def visit_m20(self, motorway: motorways.M20):
-        chars = input()[:255]  # limit input length to 255 characters
-        for char in chars:
-            self._stack.append(UInt8(ord(char)))
-        self._stack.append(UInt8(len(chars)))
+        char = sys.stdin.read(1)
+        # treat EOF and EOT as zero
+        val = 0 if not char or char == chr(4) else ord(char)
+        self._stack.append(UInt8(val))
 
     @check_stack
     def visit_m25(self, motorway: motorways.M25):

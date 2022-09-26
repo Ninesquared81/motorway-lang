@@ -1,12 +1,13 @@
 FILEPATH = "../src/motorways.py"
 
 
+# this is a list of 3-tuples: (class (motorway) name, __init__() parameters (i.e. fields), class docstring)
 motorways: list[tuple[str, str, str]] = [
     ("M1", "token: Token", '"""Increment top of stack."""'),
     ("M4", "token: Token", '"""Pop and print of stack to stdout (as a character)."""'),
     ("M5", "token: Token", '"""Pop top of stack."""'),
     ("M6", "token: Token", '"""Push new (zero-initialized) cell to top of stack."""'),
-    ("M20", "token: Token", '"""Read a string from stdin and place onto stack character-wise."""'),
+    ("M20", "token: Token", '"""Read a single character from stdin and push it to the top of the stack."""'),
     ("M25", "token: Token, body: list[Motorway]", '"""Pop top of stack. If zero, skip to matching \'M62\', otherwise, loop."""'),
     ("M40", "token: Token", '"""Duplicate top of stack."""'),
     ("M42", "token: Token", '"""Swap top two elements of stack."""'),

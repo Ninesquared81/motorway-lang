@@ -21,7 +21,7 @@ which are mainly interpreted as ASCII characters.
 * M4 &ndash; pop current character and print it to _stdout_.
 * M5 &ndash; pop stack and discard the value.
 * M6 &ndash; push new cell to stack, initialized to zero.
-* M20 &ndash; read a string from _stdin_ and store on stack element-wise (i.e. the final character of the string will be at the top of the stack) along with its length.
+* M20 &ndash; read a single character from _stdin_ and push it to the top of the stack.
 * M25 &ndash; if top of stack is zero, skip past matching `M62` token, else, continue to next motorway (i.e. loop start).
 * M26 &ndash; jump back to matching `M25` token (i.e. loop end).
 * M40 &ndash; duplicate top of stack.

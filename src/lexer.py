@@ -14,13 +14,13 @@ def lex(source: str):
         current_token = ""
         current_type: Optional[TokenType] = None
         if char == "M" and i + 1 < length:
-            i, current_token = match_mx(i + 1, length, source)
+            i, current_token = match_mx(i, length, source)
             current_type = TokenType.MX
         elif char == "A" and i + 1 < length:
-            i, current_token = match_axm(i + 1, length, source)
+            i, current_token = match_axm(i, length, source)
             current_type = TokenType.AXM
         elif char == "(" and i + 2 < length:
-            i, current_token = match_bracket(i + 1, length, source)
+            i, current_token = match_bracket(i, length, source)
             current_type = TokenType.BRACKET
         elif char == "/n":
             row += 1
@@ -38,11 +38,12 @@ def lex(source: str):
 def match_axm(i: int, length: int, source: str) -> tuple[int, str]:
     current_token = "A"
 
-    while i < length and (char := source[i]).isdigit():
+    while i + 1 < length and (char := source[i + 1]).isdigit():
         current_token += char
         i += 1
-    if (char := source[i]) == "M":
+    if (char := source[i + 1]) == "M":
         current_token += char
+        i += 1
     else:
         current_token = ""
 
@@ -51,7 +52,7 @@ def match_axm(i: int, length: int, source: str) -> tuple[int, str]:
 
 def match_mx(i: int, length: int, source: str) -> tuple[int, str]:
     current_token = "M"
-    while i < length and (char := source[i]).isdigit():
+    while i + 1 < length and (char := source[i + 1]).isdigit():
         current_token += char
         i += 1
 
@@ -59,15 +60,16 @@ def match_mx(i: int, length: int, source: str) -> tuple[int, str]:
 
 
 def match_bracket(i: int, length: int, source: str) -> tuple[int, str]:
-    char = source[i]
+    char = source[i + 1]
     if char == "M":
         temp, current_token = match_mx(i + 1, length, source)
     elif char == "A":
         temp, current_token = match_axm(i + 1, length, source)
     else:
-        temp = i + 1
+        temp = i
         current_token = ""
 
+    temp += 1
     if source[temp] == ")":
         i = temp
     else:

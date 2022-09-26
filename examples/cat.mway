@@ -1,0 +1,9 @@
+read first character: M20
+
+duplicate it: (M25) M40
+
+if non-zero, loop: M25
+     in the loop, print: M4 (M25)
+     read next character: M20 (M25)
+     duplicate M40 (M25)
+end loop: M26

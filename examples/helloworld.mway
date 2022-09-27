@@ -1,0 +1,28 @@
+Initialize stack to [2,4,8,16,32,64] (<-top):
+    M6 M1 M45 M1 (M25) M40 M25 M40 (M42) M40 (M25) (M4) M48 (M4) (M25) M40
+    (M42) M40 (M25) (M4) M48 (M4) (M25) M40 (M25) (M4) M48 (M4) (M25) M26
+
+Print "H":
+    (M25) (M1) M62 M60 M56 (M6) (M5) (M4) M48 (M4) (M25) (M1) M62 M60 M56
+    (M6) (M42) M40 (M25) (M1) M62 M60 M56 (M6) (M42) M40 (M25) (M1) M62 M60
+    M56 (M6) (M5) M49 M4
+
+Print "e":
+    (M5) M42 (M5) (M4) M48 (M4) (M5) M6 M1 (M25) (M4) M49 (M5) M42 (M6) M56 M60
+    M62 (M1) (M25) M40 (M42) M40 (M25) (M4) M48 (M4) M48 (M4) (M5) M42 M40 (M25)
+    (M1) M62 M60 M56 (M6) (M5) (M4) M48 (M4) (M5) M42 M40 (M25) M40 (M25) (M4)
+    M48 (M4) (M5) (M6) M56 M60 M62 (M1) (M25) M40 (M42) (M6) M56 M60 M61 (M6)
+    (M5) (M4) M48 (M4) (M25) M40 (M42) M6 M1 M45 M1 A1M M1 M621 M1 (M25) M40
+    (M25) (M4) M48 (M4) M49 (M5) (M6) M1 (M25) M4
+
+Print "llo, W":
+    (M25) M40 (M42) M40 (M25) M4 M32 M4 (M5) M6 M1 M18 M1 M45 M1 (M6) M42 M40
+    (M25) (M1) M62 M60 M56 (M6) (M5) (M4) M48 M4 (M5) M42 (M5) M4 (M5) M42 M40
+    (M25) M4 (M25) M1 M62 M60 M56 (M6) (M5) M4
+
+Print "orld!\n":
+    (M5) M42 (M6) M56 M60 M62 M1 (M6) M42 M40 (M25) (M1) M62 M60 M56 (M6) (M5)
+    (M4) M48 (M4) (M25) M40 (M25) M4 (M25) M1 M45 M1 A1M M1 (M25) M4 (M25) M40
+    (M25) M4 (M5) M6 M1 M18 M1 M69 M1 M621 M1 (M25) M40 (M25) (M4) M48 (M4) (M25)
+    M40 (M42) (M6) M56 M60 M67 M60 M56 (M6) (M5) M49 M4 (M5) M42 (M5) M4 (M25)
+    M1 M45 M1 (M25) M4

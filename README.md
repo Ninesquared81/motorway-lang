@@ -2,26 +2,27 @@
 An esoteric programming language based around the British motorway network.
 ## The Language
 A Motorway program is a description of a route along the British (mainland) motorway network. Only motorways that form 
-the main interconnected network are considered part of the program. Anything else (motorway or otherwise) is considered
-a comment and ignored.
+the main interconnected network are allowed. Any non-existent motorway is a syntax error. Anything not of the form Mx or
+AxM (where x is a number) is ignored as a comment. 
 
 Certain motorways have special meanings, called **commands**. Other motorways merely serve to connect these commands.
 A program is valid only if the route it describes is physically possible (i.e. each motorway visited must connect to
 the next). The directionality of junctions is not considered when testing the validity of a route, nor is motorway
-status (or lack thereof) of connections at junctions between two motorways (e.g. you con change between the M1 and M69,
+status (or lack thereof) of connections at junctions between two motorways (e.g. you can change between the M1 and M69,
 even though in real life, this would involve leaving motorway restrictions and negotiating a roundabout before getting
 onto the M69). A motorway corresponding to a command can be visited without invoking its effect by placing the route
 number in brackets (e.g. `M6 (M1) M69` visits the M1 with no side effects).
 
-A program has access to a data stack, which most of the commands manipulate. The stack comprises 8-bit unsigned cells,
-which are mainly interpreted as ASCII characters.
+A program has access to a data stack, which most of the commands manipulate. The stack comprises an unbounded number of
+8-bit unsigned cells, which wrap on overflow. Note that in practice, there _will_ be an upper bound on the size of the
+stack, but this is not defined by the language.
 
 ### Commands
 * M1 &ndash; increment top of stack.
 * M4 &ndash; pop current character and print it to _stdout_.
-* M5 &ndash; pop stack and discard the value.
+* M5 &ndash; pop top of stack and discard the value.
 * M6 &ndash; push new cell to stack, initialized to zero.
-* M20 &ndash; read a single character from _stdin_ and push it to the top of the stack.
+* M20 &ndash; read a single character from _stdin_ and push it to top of stack.
 * M25 &ndash; if top of stack is zero, skip past matching `M62` token, else, continue to next motorway (i.e. loop start).
 * M26 &ndash; jump back to matching `M25` token (i.e. loop end).
 * M40 &ndash; duplicate top of stack.

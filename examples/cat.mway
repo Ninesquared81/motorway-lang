@@ -7,3 +7,5 @@ if non-zero, loop: M25
      read next character: M20 (M25)
      duplicate M40 (M25)
 end loop: M26
+
+clear up stack: (M25) (M4) M5

@@ -2,7 +2,7 @@
 An esoteric programming language based around the British motorway network.
 ## The Language
 A Motorway program is a description of a route along the British (mainland) motorway network. Only motorways that form 
-the main interconnected network are allowed. Any non-existent motorway is a syntax error. Anything not of the form Mx or
+the main interconnected network are allowed. Any non-existent or unconnected motorway (e.g. M2) is a syntax error. Anything not of the form Mx or
 AxM (where x is a number) is ignored as a comment. 
 
 Certain motorways have special meanings, called **commands**. Other motorways merely serve to connect these commands.
